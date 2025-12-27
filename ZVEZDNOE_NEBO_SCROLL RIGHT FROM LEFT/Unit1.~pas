@@ -1,0 +1,76 @@
+unit Unit1;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  ExtCtrls, Math;
+
+type
+  TForm1 = class(TForm)
+    Image1: TImage;
+    Timer1: TTimer;
+    procedure FormCreate(Sender: TObject);
+    procedure MoveStars(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+starsx:array [1..400] of integer;
+starsy:array [1..400] of integer;
+xmin,ymin,xmax,ymax: integer;
+
+implementation
+
+{$R *.DFM}
+
+procedure TForm1.FormCreate(Sender: TObject);
+var
+i: word;
+begin
+Randomize;
+xmin:=0;
+ymin:=0;
+xmax:=Form1.Image1.Width;
+ymax:=Form1.Image1.Height;
+Form1.Image1.Canvas.Brush.Color:=clblack;
+Form1.Image1.Canvas.FillRect(Rect(xmin,ymin,xmax,ymax));
+Form1.Image1.Canvas.Pen.Color:=clwhite;
+For i:=1 to 400 do
+   begin
+   starsx[i]:=random(640);
+   starsy[i]:=random(480);
+   Form1.Image1.Canvas.MoveTo(starsx[i],starsy[i]);
+   Form1.Image1.Canvas.LineTo(starsx[i],starsy[i]);
+   end;
+end;
+
+procedure TForm1.MoveStars(Sender: TObject);
+var
+i:integer;
+begin
+For i:=1 to 400 do
+   begin
+   starsx[i]:=starsx[i]-1;
+   Form1.Image1.Canvas.Pen.Color:=clwhite;
+   Form1.Image1.Canvas.MoveTo(starsx[i],starsy[i]);
+   Form1.Image1.Canvas.LineTo(starsx[i],starsy[i]);
+   Form1.Image1.Canvas.Pen.Color:=clblack;
+   Form1.Image1.Canvas.MoveTo(starsx[i]+1,starsy[i]);
+   Form1.Image1.Canvas.LineTo(starsx[i]+1,starsy[i]);
+   If starsx[i]<=0 then
+      begin
+      starsx[i]:=640;
+      Form1.Image1.Canvas.Pen.Color:=clblack;
+      Form1.Image1.Canvas.MoveTo(0,starsy[i]);
+      Form1.Image1.Canvas.LineTo(0,starsy[i]);
+      end;
+   end;
+end;
+
+end.

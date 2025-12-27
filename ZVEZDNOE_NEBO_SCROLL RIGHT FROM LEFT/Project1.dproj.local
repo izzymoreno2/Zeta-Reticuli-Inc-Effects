@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.069,C:\Embarcadero Projects\ZVEZDNOE_NEBO_SCROLL RIGHT FROM LEFT\Unit1.pas=C:\Embarcadero Projects\ZVEZDNOE_NEBO_SCROLL RIGHT FROM LEFT\ZetaReticuli.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.069,C:\Embarcadero Projects\ZVEZDNOE_NEBO_SCROLL RIGHT FROM LEFT\Unit1.dfm=C:\Embarcadero Projects\ZVEZDNOE_NEBO_SCROLL RIGHT FROM LEFT\ZetaReticuli.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.536,C:\Embarcadero Projects\ZVEZDNOE_NEBO_SCROLL RIGHT FROM LEFT\MainProgMenu.pas=C:\Embarcadero Projects\ZVEZDNOE_NEBO_SCROLL RIGHT FROM LEFT\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.536,C:\Embarcadero Projects\ZVEZDNOE_NEBO_SCROLL RIGHT FROM LEFT\MainProgMenu.dfm=C:\Embarcadero Projects\ZVEZDNOE_NEBO_SCROLL RIGHT FROM LEFT\Unit2.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
